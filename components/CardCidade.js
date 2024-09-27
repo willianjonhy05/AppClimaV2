@@ -1,23 +1,23 @@
-import { Text, View, ScrollView, StyleSheet, Image } from 'react-native'
+import { Text, View, ScrollView, StyleSheet, Image } from 'react-native';
 
+export default function DetailCity({ details }) {
+    if (!details) {
+        return <Text style={styles.errorText}>Detalhes da cidade não encontrados.</Text>;
+    }
 
-
-
-export default function DetailCity() {
     return (
         <ScrollView>
             <View style={styles.contentBox}>
-                <Image source={require('../assets/teresina.png')} style={styles.image} />
-                <Text style={styles.description}>Uma breve descrição da cidade</Text>
-                <Text style={styles.subtitle}>Top Attractions:</Text>
-                {/* {details.attractions.map((attraction, index) => (
-                    <Text key={index} style={styles.attraction}>{attraction}</Text>
-                ))} */}
+                <Image source={details.image} style={styles.image} />
+                <Text style={styles.description}>{details.description}</Text>
+                <Text style={styles.subtitle}>Principais Pontos Turísticos:</Text>
+                {details.attractions.map((attraction, index) => (
+                    <Text key={index} style={styles.attraction}>* {attraction}</Text>
+                ))}
             </View>
         </ScrollView>
-    )
+    );
 }
-
 
 const styles = StyleSheet.create({
     contentBox: {
@@ -36,18 +36,24 @@ const styles = StyleSheet.create({
     description: {
         fontSize: 16,
         marginBottom: 10,
-        color: 'black'
+        color: 'black',
     },
     subtitle: {
         fontSize: 20,
         fontWeight: 'bold',
         marginTop: 10,
         marginBottom: 5,
-        color: 'black'
+        color: 'black',
     },
     attraction: {
         fontSize: 16,
         marginLeft: 10,
-        color: 'black'
+        color: 'black',
+    },
+    errorText: {
+        fontSize: 18,
+        color: 'red',
+        textAlign: 'center',
+        marginTop: 20,
     },
 });

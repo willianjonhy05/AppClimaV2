@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function ProximosSeteDias() {
 
-    // Função para obter os próximos 7 dias, a partir de amanhã
+    
     function getProximosSeteDias() {
         const hoje = new Date();
         const diasDaSemana = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
@@ -13,9 +13,9 @@ export default function ProximosSeteDias() {
         
         for (let i = 1; i <= 7; i++) {
             const proximaData = new Date(hoje);
-            proximaData.setDate(hoje.getDate() + i); // Incrementa o dia
+            proximaData.setDate(hoje.getDate() + i); 
 
-            const diaSemana = diasDaSemana[proximaData.getDay()]; // Nome do dia
+            const diaSemana = diasDaSemana[proximaData.getDay()]; 
             proximosDias.push(diaSemana);
         }
 
@@ -56,8 +56,8 @@ export default function ProximosSeteDias() {
             ];
         }
 
-        const indiceAleatorio = Math.floor(Math.random() * imagens.length); // Sorteia um índice aleatório
-        return imagens[indiceAleatorio]; // Retorna a URL da imagem sorteada
+        const indiceAleatorio = Math.floor(Math.random() * imagens.length); 
+        return imagens[indiceAleatorio]; 
     }
 
     const proximosSeteDias = getProximosSeteDias(); // Chama a função para gerar os dias
@@ -71,8 +71,8 @@ export default function ProximosSeteDias() {
                         <CardClima 
                             key={index} 
                             data={dia} 
-                            temperatura={getTemperaturaAleatoria().toString()} // Chama a função para gerar uma temperatura aleatória
-                            imagem={getImagemAleatoria()} // Chama a função para gerar uma imagem aleatória de acordo com o horário
+                            temperatura={getTemperaturaAleatoria().toString()} 
+                            imagem={getImagemAleatoria()} 
                         />
                     ))}
                 </ScrollView>
