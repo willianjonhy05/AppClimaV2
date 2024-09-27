@@ -28,11 +28,11 @@ const TesteConcluido = () => {
                     <View style={styles.main}>
                         <View style={styles.column}>
                             {destinations.slice(0, Math.ceil(destinations.length / 2)).map(places => (
-                                <TouchableOpacity 
-                                    style={styles.touchableOpacity} 
-                                    key={places} 
+                                <TouchableOpacity
+                                    style={styles.touchableOpacity}
+                                    key={places}
                                     onPress={() => {
-                                        navigation.navigate('Cidade', { cidade: places });
+                                        navigation.navigate('Cidade', { cidade: places.replace(/\s+/g, '') });
                                     }}
                                 >
                                     <Text style={styles.buttonText}>{places}</Text>
@@ -41,11 +41,11 @@ const TesteConcluido = () => {
                         </View>
                         <View style={styles.column}>
                             {destinations.slice(Math.ceil(destinations.length / 2)).map(places => (
-                                <TouchableOpacity 
-                                    style={styles.touchableOpacity} 
-                                    key={places} 
+                                <TouchableOpacity
+                                    style={styles.touchableOpacity}
+                                    key={places}
                                     onPress={() => {
-                                        navigation.navigate('Cidade', { cidade: places }); 
+                                        navigation.navigate('Cidade', { cidade: places.replace(/\s+/g, '') });
                                     }}
                                 >
                                     <Text style={styles.buttonText}>{places}</Text>
