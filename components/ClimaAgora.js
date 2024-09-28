@@ -76,6 +76,9 @@ export default function ClimaNow() {
                         <Text style={styles.weatherDescription}>
                             Clima Atual: {weather.weather[0].description}{"\n"}
                         </Text>
+                        <Text style={styles.weatherDescription}>
+                            Min: {Math.round(weather.main.temp_min)} °C / Máx: {Math.round(weather.main.temp_max)} °C
+                        </Text>
                     </View>
                 </View>
             )}
