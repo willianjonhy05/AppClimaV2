@@ -11,7 +11,7 @@ import { destinationDetails } from '../moks/destinos';
 
 
 
-const CidadeShow = () => {
+export default function CidadeShow() {
     const route = useRoute();
     const navigation = useNavigation();
     const { cidade } = route.params;
@@ -53,7 +53,7 @@ const CidadeShow = () => {
     );
 };
 
-export default CidadeShow;
+
 
 const styles = StyleSheet.create({
     gradient: {
